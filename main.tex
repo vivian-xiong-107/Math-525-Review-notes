@@ -1,0 +1,261 @@
+\documentclass[a4paper,twoside,11pt]{article}
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\chead{Math 525 Review Notes}
+\lhead{Winter 2021}
+\rhead{Caiwei Xiong}
+\cfoot{\thepage}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[figurename=Fig.,labelfont=bf,labelsep=period]{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{amsbsy}
+\usepackage{newtxtext,newtxmath}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{framed} 
+\usepackage[english]{babel}
+\definecolor{shadecolor}{rgb}{0.94,0.97,1.0} \definecolor{c1}{HTML}{FFFFCC}
+
+\begin{document}
+\section{Simple Probability Samples}
+\subsection{Simple Random Sampling}
+\subsubsection{Simple Random Sample with Replacement SRSWR}
+A simple random sample with replacement (SRSWR) of size $n$ from a population of $N$ units can be thought of as drawing $n$ independent samples of size $1$. \textcolor{Purple}{One unit is randomly selected from the population to be the first sampled unit, with probability $1/N$.} Then the sampled unit is replaced in the population, and a second unit is randomly selected with probability $1/N$. \textcolor{Purple}{This procedure is repeated until the sample has $n$ units, which may include duplicates from the population.}
+\subsubsection{simple random sample without replacement SRSWOR}
+A simple random sample without replacement (SRS) of size n is selected so that every possible subset of $n$ distinct units in the population has the same probability of being selected as the sample. There are $\begin{pmatrix} N \\ n \end{pmatrix}$ possible samples, and each is equally likely, so the probability of selecting any individual sample $\mathcal{S}$ of $n$ units is
+\begin{equation*}
+\begin{aligned}
+P(\mathcal{S}) = \frac{1}{\begin{pmatrix} N \\ n \end{pmatrix} } = \frac{n!(N-n)!}{N!}
+\end{aligned}
+\end{equation*}
+\subsection{Properties in SRS}
+The population total:
+\begin{equation*}
+\begin{aligned}
+t = \sum^N_{i=1} y_i
+\end{aligned}
+\end{equation*}
+Mean of the population
+\begin{equation*}
+\begin{aligned}
+\bar{y}_U = \frac{1}{N}\sum^N_{i=1} y_i
+\end{aligned}
+\end{equation*}
+The variance of the population values about the mean as
+\begin{equation*}
+\begin{aligned}
+S^2 = \frac{1}{N-1} \sum^N_{i=1} (y_i - \bar{y}_U)^2
+\end{aligned}
+\end{equation*}
+The population standard deviation
+\begin{equation*}
+\begin{aligned}
+S = \sqrt{S^2}
+\end{aligned}
+\end{equation*}
+For estimating the population mean $\bar{y}_U$ from an \textbf{SRS}, we use the sample mean:
+\begin{equation*}
+\begin{aligned}
+\bar{y}_{\mathcal{S}} = \frac{1}{n} \sum_{i \in \mathcal{S}}y_i
+\end{aligned}
+\end{equation*}
+$\bar{y}$ is an unbiased estimator of the population mean $\bar{y}_U$, and the variance of $\bar{y}$ is 
+\begin{equation*}
+\begin{aligned}
+V(\bar{y}) = \frac{S^2}{n}(1-\frac{n}{N})
+\end{aligned}
+\end{equation*}
+The standard error(SE) is the square root of the estimated variance of $\bar{y}:$ 
+\begin{equation*}
+\begin{aligned}
+SE(\bar{y}) = \sqrt{(1-\frac{n}{N})\frac{s^2}{n}}
+\end{aligned}
+\end{equation*}
+The coefficient of variation (CV) of the estimator $\bar{y}$ is a measure of relative variability, which may be defined when $\bar{y}_U \ne 0:$
+\begin{equation*}
+\begin{aligned}
+CV(\bar{y}) = \frac{\sqrt{V(\bar{y})}}{E(\bar{y})} = \sqrt{1-\frac{n}{N}}\frac{S}{\sqrt{n}\bar{y}_U}
+\end{aligned}
+\end{equation*}
+\subsection{Sampling weight}
+Define $\pi_i$ to be the probability that unit $i$ is included in the sample. 
+\newline
+\newline
+Sampling weight, for any sampling design, to be the reciprocal of the inclusion probability:
+\begin{equation*}
+\begin{aligned}
+w_i = \frac{1}{\pi_i}
+\end{aligned}
+\end{equation*}
+The sampling weight of unit $i$ can be interpreted as the number of population units represented by unit $i$.
+\begin{itemize}
+    \item In an SRS:
+    \begin{itemize}
+        \item each unit has inclusion probability $\pi_i = n/N$
+        \item all sampling weights are the same with $w_i = 1/ \pi_i = N/n$
+        \item every unit in the sample as representing itself plus $N/(n-1)$ of the unsampled units in the population.
+\newline
+\begin{equation*}
+\begin{aligned}
+& \ \sum_{i \in \mathcal{S}} \  w_i = \sum_{i \in \mathcal{S}} \frac{N}{n} = N \\
+& \ \sum_{i \in \mathcal{S}} \  w_i y_i = \sum_{i \in \mathcal{S}} \frac{N}{n} y_i = \hat{t} \\
+& \ \frac{\sum_{i \in \mathcal{S}}w_i y_i }{\sum_{i \in \mathcal{S}} w_i} \  = \frac{\hat{t}}{N} = \bar{y}
+\end{aligned}
+\end{equation*}
+    \end{itemize}
+\end{itemize}
+\noindent All weights are the same in an \textbf{SRS} that is, every unit in the sample represents the same number of units, $N/n$, in the population. We call such a sample, in which every unit has the same sampling weight, a self-weighting sample.
+\subsection{Confidence Interval SRSWOR}
+\textbf{Confidence intervals (CIs)} are used to indicate the accuracy of an estimate.
+\newline
+\newline
+\textcolor{Purple}{A $95\%$ confidence interval is often explained heuristically: If we take samples from our population over and over again, and construct a confidence interval using our procedure for each possible sample, we expect $95\%$ of the resulting intervals to include the true value of the population parameter.}
+\begin{shaded*}
+\noindent if $n, N$, and $N-n$ are all “sufficiently large,” then the sampling distribution of
+\begin{equation*}
+\begin{aligned}
+\frac{\bar{y}-\bar{y}_U}{\sqrt{(1-\frac{n}{N})}\frac{S}{\sqrt{n}}}
+\end{aligned}
+\end{equation*}
+is approximately normal (Gaussian) with mean $0$ and variance $1$.
+\end{shaded*}
+\noindent A large-sample $100(1-\alpha)\%$ CI for the population mean is:
+\begin{equation*}
+\begin{aligned}
+\bar{y} - z_{\alpha/2} \sqrt{1-\frac{n}{N}}\frac{S}{\sqrt{n}}, \bar{y}+ z_{\alpha/2} \sqrt{1-\frac{n}{N}}\frac{S}{\sqrt{n}}
+\end{aligned}
+\end{equation*}
+where $z_{\alpha/2}$ is the $(1-\alpha/2)$ th percentile of the standard normal distribution. In simple random sampling without replacement, $95\%$ of the possible samples that could be chosen will give a $95\%$ CI for $y_U$ that contains the true value of $y_U$.
+\textcolor{Brown}{
+\subsubsection{Probability Sampling Designs}
+A probability sampling design is a probability measure over all possible candidate survey samples. Let
+\begin{equation*}
+\begin{aligned}
+\Omega = \{ \mathcal{S}| \mathcal{S} \subseteq \mathcal{U} \}
+\end{aligned}
+\end{equation*}
+be the set of all possible subsets of the survey population $\mathcal{U}$. Let $\mathcal{P}$ be a probability
+measure over $\Omega$ such that
+\begin{equation*}
+\begin{aligned}
+\mathcal{P} (\mathcal{S}) \ge 0 \ \ \text{for any} \ \ \mathcal{S} \in \Omega \ \ \text{and} \ \ \sum_{\mathcal{S:S} \in \Omega} \mathcal{P}(\mathcal{S}) = 1
+\end{aligned}
+\end{equation*}
+A probability sample $\mathcal{S}$ can be selected based on the probability design $\mathcal{P}$ 
+\subsubsection{Simple Random Sampling Without Replacement}
+The following sampling procedure with prespecified $N$ and $n$ is called Simple Random Sampling Without Replacement (SRSWOR). We assume that a complete list of all population units has already been created and can be used as the sampling frame.
+\begin{enumerate}
+    \item Select the first unit from the $N$ units on the sampling frame with equal probabilities $1/N$; denote the selected unit as $i_1$
+    \item Select the second unit from the remaining $N-1$ units on the sampling frame with equal probabilities $1/(N-1)$; denote the selected unit as $i_2$
+    \item Continue the process and select the nth unit from the remaining $N-n + 1$ units on the sampling frame with equal probabilities $1/(N-n+1)$; denote the selected unit as $i_n$.
+\end{enumerate}
+Let $\mathcal{S} = \{ i_1, i_2, \cdots, i_n \}$ be the final set of $n$ selected units. 
+\newline
+\newline
+\texttt{Under simple random sampling without replacement, the selected sample satisfies the \\ probability measure given by i.e.,} $\mathcal{P(S)} = 1/ \begin{pmatrix}  N \\ n \end{pmatrix}$ if $|\mathcal{S}| =n$ and $\mathcal{P(S)} = 0$ otherwise.
+\newline
+The sample mean and sample variance:
+\begin{equation*}
+\begin{aligned}
+\bar{y} = \frac{1}{n}\sum_{i \in \mathcal{S}} y_i \ \ \ \text{and} \ \ \ s_y^2 = \frac{1}{n-1} \sum_{i \in \mathcal{S}} (y_i - \bar{y})^2
+\end{aligned}
+\end{equation*}
+\subsubsection{Under simple random sampling without replacement:}
+a) The sample mean $\bar y$ is a design-unbiased estimator for the population mean $\mu_y$
+\begin{equation*}
+\begin{aligned}
+E(\bar{y}) = \mu_y
+\end{aligned}
+\end{equation*}
+b) The design-based variance of $\bar{y}$ is given by:
+\begin{equation*}
+\begin{aligned}
+V(\bar{y}) = (1-\frac{n}{N}) \frac{\sigma_y^2}{n}
+\end{aligned}
+\end{equation*}
+\indent where $\sigma_y^2$ is the population variance
+\newline
+c) An unbiased variance estimator for $\bar{y}$ is given by:
+\begin{equation*}
+\begin{aligned}
+v(\bar{y}) = (1-\frac{n}{N}) \frac{s_y^2}{n}
+\end{aligned}
+\end{equation*}
+\indent which satisfies $E\{ v(\bar{y}) \} = V(\bar{y})$}
+\subsubsection{Sample Size Estimation}
+Only the investigators in the study can say how much precision is needed. The desired precision is often expressed in absolute terms, as
+\begin{equation*}
+\begin{aligned}
+P(|\bar{y} - \bar{y}_U| \le e) = 1-\alpha
+\end{aligned}
+\end{equation*}
+The investigator must decide on reasonable values for $\alpha$ and $e$; $e$ is called the margin of error in many surveys. For many surveys of people in which a proportion is measured, $e=0.03$ and $\alpha=0.05$.
+\newline
+If $\bar{y}_u \ne 0$ the precision may be expressed as 
+\begin{equation*}
+\begin{aligned}
+P(|\frac{\bar{y}-\bar{y}_U}{\bar{y}_U}| \le r ) = 1- \alpha
+\end{aligned}
+\end{equation*}
+\newline
+\newline
+\texttt{Find an equation:} The simplest equation relating the precision and sample size comes from the confidence intervals in the previous section. To obtain absolute precision $e$, find a value of $n$ that satisfies
+\begin{equation*}
+\begin{aligned}
+e = z_{\alpha/2}\sqrt{(1-\frac{n}{N})} \frac{S}{\sqrt{n}}
+\end{aligned}
+\end{equation*}
+To solve this equation for $n$, we first find the sample size $n_0$ that we would use for an SRSWR:
+\begin{equation*}
+\begin{aligned}
+n_0 = (\frac{z_{\alpha/2}S}{e})^2
+\end{aligned}
+\end{equation*}
+Then the desired sample size is:
+\begin{equation*}
+\begin{aligned}
+n = \frac{n_0}{1+ \frac{n_0}{N}} = \frac{z_{\alpha/2}^2 S^2}{e^2 + \frac{z_{\alpha/2}^2 S^2}{N}}
+\end{aligned}
+\end{equation*}
+Of course, if $n_0 \ge N$ we simply take a census with $n=N$
+\subsection{Summary}
+Estimators for an SRS are similar to those in introductory statistics class, using $\bar{y} = \sum_{i \in \mathcal{S}} y_i /n$ and $s^2 = \sum_{i \in \mathcal{S}} (y_i - \bar{y})^2/(n-1)$
+\begin{center}
+\begin{tabular}{ |c| c| c|} 
+ \hline
+Population Quantity & Estimator & Standard Error of Estimator\\
+Population total $t = \sum^N_{i=1} y_i$ & $\hat{t} = \sum_{i \in \mathcal{S}} w_i y_i = N \bar{y}$ & \ $N \sqrt{(1-\frac{n}{N})\frac{s^2}{n}}$ \\
+Population mean $\bar{y}_U = \frac{t}{N}$ & $\frac{\hat{t}}{N} = \frac{\sum_{i \in \mathcal{S}}w_iy_i}{\sum_{i \in \mathcal{S}}w_i}= \bar{y}$ & $\sqrt{(1-\frac{n}{N})\frac{s^2}{n}}$ \\
+Population proportion $p$ & $\hat{p}$ & \ $\sqrt{(1-\frac{n}{N})\frac{\hat{p}(1-\hat{p})}{n-1}}$ \\
+ \hline
+\end{tabular}
+\end{center}
+The only feature found in the estimators for without-replacement random samples that does not occur in with-replacement random samples is the finite population correction, $(1-n/N)$, which decreases the standard error when the sample size is large relative to the population size. In most surveys done in practice, the fpc is so close to one that it can be ignored.
+
+
+
+
+\begin{equation*}
+\begin{aligned}
+
+\end{aligned}
+\end{equation*}
+
+
+
+
+
+
+
+
+\end{document}
