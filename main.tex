@@ -30,34 +30,34 @@
 \section{Simple Probability Samples}
 \subsection{Simple Random Sampling}
 \subsubsection{Simple Random Sample with Replacement SRSWR}
-A simple random sample with replacement (SRSWR) of size $n$ from a population of $N$ units can be thought of as drawing $n$ independent samples of size $1$. \textcolor{Purple}{One unit is randomly selected from the population to be the first sampled unit, with probability $1/N$.} Then the sampled unit is replaced in the population, and a second unit is randomly selected with probability $1/N$. \textcolor{Purple}{This procedure is repeated until the sample has $n$ units, which may include duplicates from the population.}
+\textbf{A simple random sample with replacement (SRSWR)} of size $n$ from a population of $N$ units can be thought of as drawing $n$ independent samples of size $1$. \textcolor{Purple}{One unit is randomly selected from the population to be the first sampled unit, with probability $1/N$.} Then the sampled unit is replaced in the population, and a second unit is randomly selected with probability $1/N$. \textcolor{Purple}{This procedure is repeated until the sample has $n$ units, which may include duplicates from the population.}
 \subsubsection{simple random sample without replacement SRSWOR}
-A simple random sample without replacement (SRS) of size n is selected so that every possible subset of $n$ distinct units in the population has the same probability of being selected as the sample. There are $\begin{pmatrix} N \\ n \end{pmatrix}$ possible samples, and each is equally likely, so the probability of selecting any individual sample $\mathcal{S}$ of $n$ units is
+A simple random sample without replacement \textbf{(SRS)} of size n is selected so that every possible subset of $n$ distinct units in the population has the same probability of being selected as the sample. There are $\begin{pmatrix} N \\ n \end{pmatrix}$ possible samples, and each is equally likely, so the probability of selecting any individual sample $\mathcal{S}$ of $n$ units is
 \begin{equation*}
 \begin{aligned}
 P(\mathcal{S}) = \frac{1}{\begin{pmatrix} N \\ n \end{pmatrix} } = \frac{n!(N-n)!}{N!}
 \end{aligned}
 \end{equation*}
 \subsection{Properties in SRS}
-The population total:
+\textbf{The population total:}
 \begin{equation*}
 \begin{aligned}
 t = \sum^N_{i=1} y_i
 \end{aligned}
 \end{equation*}
-Mean of the population
+\textbf{Mean of the population}
 \begin{equation*}
 \begin{aligned}
 \bar{y}_U = \frac{1}{N}\sum^N_{i=1} y_i
 \end{aligned}
 \end{equation*}
-The variance of the population values about the mean as
+\textbf{The variance of the population values about the mean as}
 \begin{equation*}
 \begin{aligned}
 S^2 = \frac{1}{N-1} \sum^N_{i=1} (y_i - \bar{y}_U)^2
 \end{aligned}
 \end{equation*}
-The population standard deviation
+\textbf{The population standard deviation}
 \begin{equation*}
 \begin{aligned}
 S = \sqrt{S^2}
@@ -75,13 +75,13 @@ $\bar{y}$ is an unbiased estimator of the population mean $\bar{y}_U$, and the v
 V(\bar{y}) = \frac{S^2}{n}(1-\frac{n}{N})
 \end{aligned}
 \end{equation*}
-The standard error(SE) is the square root of the estimated variance of $\bar{y}:$ 
+\textbf{The standard error(SE)} is the square root of the estimated variance of $\bar{y}:$ 
 \begin{equation*}
 \begin{aligned}
 SE(\bar{y}) = \sqrt{(1-\frac{n}{N})\frac{s^2}{n}}
 \end{aligned}
 \end{equation*}
-The coefficient of variation (CV) of the estimator $\bar{y}$ is a measure of relative variability, which may be defined when $\bar{y}_U \ne 0:$
+\textbf{The coefficient of variation (CV)} of the estimator $\bar{y}$ is a measure of relative variability, which may be defined when $\bar{y}_U \ne 0:$
 \begin{equation*}
 \begin{aligned}
 CV(\bar{y}) = \frac{\sqrt{V(\bar{y})}}{E(\bar{y})} = \sqrt{1-\frac{n}{N}}\frac{S}{\sqrt{n}\bar{y}_U}
@@ -99,7 +99,7 @@ w_i = \frac{1}{\pi_i}
 \end{equation*}
 The sampling weight of unit $i$ can be interpreted as the number of population units represented by unit $i$.
 \begin{itemize}
-    \item In an SRS:
+    \item In an \textbf{SRS:}
     \begin{itemize}
         \item each unit has inclusion probability $\pi_i = n/N$
         \item all sampling weights are the same with $w_i = 1/ \pi_i = N/n$
@@ -114,7 +114,7 @@ The sampling weight of unit $i$ can be interpreted as the number of population u
 \end{equation*}
     \end{itemize}
 \end{itemize}
-\noindent All weights are the same in an \textbf{SRS} that is, every unit in the sample represents the same number of units, $N/n$, in the population. We call such a sample, in which every unit has the same sampling weight, a self-weighting sample.
+\noindent All weights are the same in an \textbf{SRS} that is, every unit in the sample represents the same number of units, $N/n$, in the population. We call such a sample, in which \textcolor{Purple}{every unit has the same sampling weight, a self-weighting sample.}
 \subsection{Confidence Interval SRSWOR}
 \textbf{Confidence intervals (CIs)} are used to indicate the accuracy of an estimate.
 \newline
@@ -153,7 +153,7 @@ measure over $\Omega$ such that
 \end{equation*}
 A probability sample $\mathcal{S}$ can be selected based on the probability design $\mathcal{P}$ 
 \subsubsection{Simple Random Sampling Without Replacement}
-The following sampling procedure with prespecified $N$ and $n$ is called Simple Random Sampling Without Replacement (SRSWOR). We assume that a complete list of all population units has already been created and can be used as the sampling frame.
+The following sampling procedure with prespecified $N$ and $n$ is called \textbf{Simple Random Sampling Without Replacement (SRSWOR)}. We assume that a complete list of all population units has already been created and can be used as the sampling frame.
 \begin{enumerate}
     \item Select the first unit from the $N$ units on the sampling frame with equal probabilities $1/N$; denote the selected unit as $i_1$
     \item Select the second unit from the remaining $N-1$ units on the sampling frame with equal probabilities $1/(N-1)$; denote the selected unit as $i_2$
@@ -171,13 +171,13 @@ The sample mean and sample variance:
 \end{aligned}
 \end{equation*}
 \subsubsection{Under simple random sampling without replacement:}
-a) The sample mean $\bar y$ is a design-unbiased estimator for the population mean $\mu_y$
+a) The sample mean $\bar y$ is a \textbf{design-unbiased estimator} for the population mean $\mu_y$
 \begin{equation*}
 \begin{aligned}
 E(\bar{y}) = \mu_y
 \end{aligned}
 \end{equation*}
-b) The design-based variance of $\bar{y}$ is given by:
+b) The \textbf{design-based variance} of $\bar{y}$ is given by:
 \begin{equation*}
 \begin{aligned}
 V(\bar{y}) = (1-\frac{n}{N}) \frac{\sigma_y^2}{n}
@@ -185,13 +185,71 @@ V(\bar{y}) = (1-\frac{n}{N}) \frac{\sigma_y^2}{n}
 \end{equation*}
 \indent where $\sigma_y^2$ is the population variance
 \newline
-c) An unbiased variance estimator for $\bar{y}$ is given by:
+c) An \textbf{unbiased variance estimator} for $\bar{y}$ is given by:
 \begin{equation*}
 \begin{aligned}
 v(\bar{y}) = (1-\frac{n}{N}) \frac{s_y^2}{n}
 \end{aligned}
 \end{equation*}
-\indent which satisfies $E\{ v(\bar{y}) \} = V(\bar{y})$}
+\indent which satisfies $E\{ v(\bar{y}) \} = V(\bar{y})$
+\subsubsection{Simple Random Sampling with Replacement}
+The following sampling procedure with pre-specified $N$ and $n$ is called \textbf{Simple Random Sampling With Replacement (SRSWR)}. The required sampling frame is a complete list of all $N$ units in the population.
+\begin{enumerate}
+    \item Select the first unit from the $N$ units on the sampling frame with equal probabilities $1/N$; denote the selected unit as $i_1$
+    \item Select the second unit from the $N$ units on the sampling frame with equal probabilities $1/N$; denote the selected unit as $i_2$;
+    \item  Continue the process and select the nth unit from the $N$ units on the sampling frame with equal probabilities $1/N$; denote the selected unit as $i_n$.
+\end{enumerate}
+Let $\mathcal{S}$ be the set of distinct units selected by \textbf{SRSWR}; let $m =|S|$ be the number of distinct units, i.e., the sample size of $\mathcal{S}$; let $\{y_i, i \in \mathcal{S}\}$ be the survey data. Let
+\begin{equation*}
+\begin{aligned}
+\bar{y}_m = \frac{1}{m} \sum{i \in \mathcal{S}} y_i
+\end{aligned}
+\end{equation*}
+be the same mean. $\bar{y}_m$ is an unbiased estimator of $\mu_y$ but it is less efficient than $\bar{y}$ from \textbf{SRSWOR}. Note that $m$ is a random number that satisfying $1\le m \le n$
+\newline
+\newline
+Suppose that we keep all $n$ selected units $(i_1,i_2,\cdots i_n)$, including duplicated ones. Let $Z_k = y_{ik}$ be the $y$ value from the $k$th selection, $k=1,2,\cdots N$. Under \textbf{SRSWR} the $Z_k$’s are independent of each other and follow the same probability distribution. Let:
+\begin{equation*}
+\begin{aligned}
+\bar{Z} = \frac{1}{n} \sum^n_{k=1}Z_k
+\end{aligned}
+\end{equation*}
+be the sample mean:
+\begin{equation*}
+\begin{aligned}
+E(\bar{Z}) = \mu_y \ \ \ \ \text{and} \ \ \ \ V(\bar{Z}) = (1-\frac{1}{N})\frac{\sigma_y^2}{n}
+\end{aligned}
+\end{equation*}
+For nontrivial cases, where $n \ge 2 $ and $\sigma_y^2 >0$, we have $V(\bar{Z}) > V(\bar{y})$, where $V(\bar{y})$ is the variance of the sample mean from \textbf{SRSWOR}, In other words, \textbf{SRSWR} procedures becomes negligible when $N$ is large and the sampling fraction $n/N$ is small.}
+\begin{center}
+\fcolorbox{white}{c1}{\parbox{1\linewidth}{
+\subsubsection{When $N$ is large and the sampling fraction $n/N$ is small}
+Under such scenarios the probability that a unit is selected more than once under \textbf{SRSWR} becomes very small. If $m=n$, i.e., all selected units are distinct, the resulting sample is equivalent to a sample selected by \textbf{SRSWOR}. More formally, we have
+\begin{equation*}
+\begin{aligned}
+\mathcal{P}(\mathcal{S}|m=n) = \begin{pmatrix} N \\ n \end{pmatrix}^{-1}
+\end{aligned}
+\end{equation*}
+Since all candidate samples with $m=n$ are equally likely. We also have $V(\bar{Z})/V(\bar{y}) \rightarrow 1$ as $N \rightarrow \infty$ and $n/N \rightarrow 0$. 
+}}
+\end{center}
+\textcolor{Brown}{
+\subsubsection{Simple Systematic Sampling}
+Suppose that the $N$ population units have been arranged in a sequence, labelled as $1,2,\cdots,N$. Let n be the desired sample size. Assume that $N = nK$ where $K$ is an integer. The \textbf{simple systematic sampling (SSS)} method selects the $n$ sampled units as follows:
+\begin{enumerate}
+    \item Select,the first unit, denoted as $k$, from the first $K$ units (i.e., $1,2,\cdots, K)$ with equal probability $1/K$
+    \item The remaining $n-1$ units for the sample are automatically determined as $k+K, k+2K + \cdots , k+(n-1)K$
+\end{enumerate}
+Under SSS, there are only $K$ candidate samples, $\mathcal{S}_k = \{ k,k+K + \cdots, k+(n-1)K \}, k=1,2,\cdots, K$, and each sample is completely determined by the initial unit, $k$. The sampling design is given by $\mathcal{P}(\mathcal{S}_k)=1/K, k=1,2\cdots,K$ and $\mathcal{P}(\mathcal{S})=0$ otherwise. Let $\bar{y}$ be the sample mean for the final selected sample. 
+\newline
+\newline
+\textbf{Under simple systematic sampling, we have }
+\begin{equation*}
+\begin{aligned}
+E(\bar{y}) = \mu_y \ \ \ \ \text{and} \ \ \ \ \ V(\bar{y}) = \frac{1}{K} \sum^K_{k=1} (\bar{y}_k - \mu_y)^2
+\end{aligned}
+\end{equation*}
+where $\bar{y}_k = n^{-1} \sum_{i \in \mathcal{S}_k} y_i$ is the sample mean for the $k$ th candidate sample $\mathcal{S}_k$}
 \subsubsection{Sample Size Estimation}
 Only the investigators in the study can say how much precision is needed. The desired precision is often expressed in absolute terms, as
 \begin{equation*}
@@ -199,7 +257,7 @@ Only the investigators in the study can say how much precision is needed. The de
 P(|\bar{y} - \bar{y}_U| \le e) = 1-\alpha
 \end{aligned}
 \end{equation*}
-The investigator must decide on reasonable values for $\alpha$ and $e$; $e$ is called the margin of error in many surveys. For many surveys of people in which a proportion is measured, $e=0.03$ and $\alpha=0.05$.
+The investigator must decide on reasonable values for $\alpha$ and $e$; \textbf{$e$ is called the margin of error} in many surveys. For many surveys of people in which a proportion is measured, $e=0.03$ and $\alpha=0.05$.
 \newline
 If $\bar{y}_u \ne 0$ the precision may be expressed as 
 \begin{equation*}
@@ -209,19 +267,19 @@ P(|\frac{\bar{y}-\bar{y}_U}{\bar{y}_U}| \le r ) = 1- \alpha
 \end{equation*}
 \newline
 \newline
-\texttt{Find an equation:} The simplest equation relating the precision and sample size comes from the confidence intervals in the previous section. To obtain absolute precision $e$, find a value of $n$ that satisfies
+\textbf{Find an equation:} The simplest equation relating the precision and sample size comes from the confidence intervals in the previous section. To obtain absolute precision $e$, find a value of $n$ that satisfies
 \begin{equation*}
 \begin{aligned}
 e = z_{\alpha/2}\sqrt{(1-\frac{n}{N})} \frac{S}{\sqrt{n}}
 \end{aligned}
 \end{equation*}
-To solve this equation for $n$, we first find the sample size $n_0$ that we would use for an SRSWR:
+To solve this equation for $n$, we first find the sample size $n_0$ that we would use for an \textbf{SRSWR}:
 \begin{equation*}
 \begin{aligned}
 n_0 = (\frac{z_{\alpha/2}S}{e})^2
 \end{aligned}
 \end{equation*}
-Then the desired sample size is:
+Then the \textbf{desired sample size} is:
 \begin{equation*}
 \begin{aligned}
 n = \frac{n_0}{1+ \frac{n_0}{N}} = \frac{z_{\alpha/2}^2 S^2}{e^2 + \frac{z_{\alpha/2}^2 S^2}{N}}
@@ -229,9 +287,9 @@ n = \frac{n_0}{1+ \frac{n_0}{N}} = \frac{z_{\alpha/2}^2 S^2}{e^2 + \frac{z_{\alp
 \end{equation*}
 Of course, if $n_0 \ge N$ we simply take a census with $n=N$
 \subsection{Summary}
-Estimators for an SRS are similar to those in introductory statistics class, using $\bar{y} = \sum_{i \in \mathcal{S}} y_i /n$ and $s^2 = \sum_{i \in \mathcal{S}} (y_i - \bar{y})^2/(n-1)$
+Estimators for an \textbf{SRS} are similar to those in introductory statistics class, using $\bar{y} = \sum_{i \in \mathcal{S}} y_i /n$ and $s^2 = \sum_{i \in \mathcal{S}} (y_i - \bar{y})^2/(n-1)$
 \begin{center}
-\begin{tabular}{ |c| c| c|} 
+\begin{tabular}{ c| c| c} 
  \hline
 Population Quantity & Estimator & Standard Error of Estimator\\
 Population total $t = \sum^N_{i=1} y_i$ & $\hat{t} = \sum_{i \in \mathcal{S}} w_i y_i = N \bar{y}$ & \ $N \sqrt{(1-\frac{n}{N})\frac{s^2}{n}}$ \\
@@ -241,6 +299,240 @@ Population proportion $p$ & $\hat{p}$ & \ $\sqrt{(1-\frac{n}{N})\frac{\hat{p}(1-
 \end{tabular}
 \end{center}
 The only feature found in the estimators for without-replacement random samples that does not occur in with-replacement random samples is the finite population correction, $(1-n/N)$, which decreases the standard error when the sample size is large relative to the population size. In most surveys done in practice, the fpc is so close to one that it can be ignored.
+\section{Stratified Sampling}
+We divide the population of $N$ sampling units into $H$ “layers” or strata, with $N_h$ sampling units in stratum $h$. \textcolor{Purple}{For stratified sampling to work, we must know the values of $N_1,N_2,\cdots, N_H$, and must have}
+\begin{equation*}
+\begin{aligned}
+N_1 + N_2 + \cdots + N_H = N
+\end{aligned}
+\end{equation*}
+where $N$ is the total number of units in the entire population.
+\newline
+\newline
+In stratified random sampling, the simplest form of stratified sampling, we independently take an \textbf{SRS} from each stratum, so that $n_h$ observations are randomly selected from the $N_h$ population units in stratum $h$. Define $\mathcal{S}_h$ to be the set of $n_h$ units in the \textbf{SRS} for stratum $h$ .The total sample size is $n=n_1+n_2+\cdots +n_H$.
+\subsection{Notation for Stratification}
+\subsubsection{The population quantities are:}
+\begin{equation*}
+\begin{aligned}
+y_{hj} =& \ \text{value of } \ j^{th} \ \text{unit in stratum} \ h  \\
+t_h =& \ \sum^{N_h}_{j=1} y_{hj} = \text{population total in stratum} \ h \\
+t =& \ \sum^H_{h=1} t_h = \text{population total} \\
+\bar{y}_{hU} =& \ \frac{\sum^{N_h}_{j=1}y_{hj}}{N_h} = \text{population mean in stratum} \ h \\
+\bar{y}_U =& \ \frac{t}{N} = \frac{\sum^H_{h=1}\sum^{N_h}_{j=1}y_{hj}}{N}=\text{Overall population mean} \\
+S_h^2 =& \ \sum^{N_h}_{j=1} \frac{(y_{hj}-\bar{y}_{hU})^2}{N_h -1} = \text{population variance in stratum} \ h
+\end{aligned}
+\end{equation*}
+\subsubsection{Corresponding quantities for the sample, using \textbf{SRS} estimators within each stratum}
+\begin{equation*}
+\begin{aligned}
+\bar{y}_h =& \ \frac{1}{n_h} \sum_{j \in \mathcal{S}_h} y_{hj} \\
+\hat{t}_h =& \ \frac{N_h}{n_h} \sum_{j \in \mathcal{S}_h} y_{hj} = N_h \bar{y}_h\\
+s_h^2 =& \ \sum_{j \in \mathcal{S}_h} \frac{(y_{hj}- \bar{y}_h)^2}{n_h -1}
+\end{aligned}
+\end{equation*}
+Suppose we only sampled the $h^{\text{th}}$ stratum. In effect, we have a population of $N_h$ units and take an \textbf{SRS} of $n_h$ units. Then we would estimate $\bar{y}_{hU}$ by $\bar{y}_h$ and $t_h$ by $\hat{t}_h = N_h \bar{y}_h$. The population total is $t= \sum^H_{h=1} t_h$, so we estimate $t$ by:
+\begin{equation*}
+\begin{aligned}
+\hat{t}_{\text{str}} = \sum^H_{h=1} \hat{t}_h = \sum^H_{h=1} N_h \bar{y}_h
+\end{aligned}
+\end{equation*}
+To estimate $\bar{y}_U$, then, we use
+\begin{equation*}
+\begin{aligned}
+\bar{y}_{\text{str}} = \frac{\hat{t}_{\text{str}}}{N} = \sum^H_{h=1} \frac{N_h}{N} \bar{y}_h
+\end{aligned}
+\end{equation*}
+This is a weighted average of the sample stratum averages; $\bar{y}_h$ is multiplied by $N_h/N$ the proportion of the population units in stratum $h$. \textcolor{Purple}{To use stratified sampling, the sizes or relative sizes of the strata must be known.}
+\subsubsection{Unbiasedness}
+$\bar{y}_{\text{str}}$ and $\hat{t}_{\text{str}}$ are unbiased estimators of $\bar{y}_U$ and $t$. An \textbf{SRS} is taken in each stratum, 
+\begin{equation*}
+\begin{aligned}
+E[\sum^H_{h=1} \frac{N_h}{N}\bar{y}_h] = \sum^H_{h=1} \frac{N_h}{N}E[\bar{y}_h] = \sum^H_{h=1} \frac{N_h}{N} \bar{y}_{hU} = \bar{y}_U
+\end{aligned}
+\end{equation*}
+\subsubsection{Variance of the estimators}
+Since we are sampling independently from the strata, and we know $V(\hat{t}_h)$ from the \textbf{SRS} theory,
+\begin{equation*}
+\begin{aligned}
+V(\hat{t}_{\text{str}} = \sum^H_{h=1} V(\hat{t}_h) = \sum^H_{h=1} (1-\frac{n_h}{N_h}) N_h^2 \frac{S_h^2}{n_h}
+\end{aligned}
+\end{equation*}
+\subsubsection{Standard errors for stratified samples}
+We can obtain an unbiased estimator of $V(\hat{t}_{\text{str}})$ by substituting the sample estimators $s_h^2$ for the population parameters $S_h^2$
+\begin{equation*}
+\begin{aligned}
+\hat{V}(\hat{t}_{\text{str}}) =& \  \sum^H_{h=1} (1-\frac{n_h}{N_h}) N_h^2 \frac{s_h^2}{n_h} \\
+\hat{V}(\bar{y}_{\text{str}}) =& \ \frac{1}{N^2} \hat{V}(\hat{t}_{\text{str}}) = \sum^H_{h=1} (1-\frac{n_h}{N_h})(\frac{N_h}{N})^2 \frac{s_h^2}{n_h}
+\end{aligned}
+\end{equation*}
+As always, the standard error of an estimator is the square root of the estimated variance: $SE(\bar{y}_{\text{str}}) = \sqrt{\hat{V}(\bar{y}_{\text{str}})}$
+\subsubsection{Confidence intervals for stratified samples}
+If either 
+\begin{itemize}
+    \item the sample sizes within each stratum are large
+    \item \textcolor{Purple}{the sampling design has a large number of strata, an approximate $100(1-\alpha)\%$ confidence interval (CI) for the population mean $\bar{y}_U$ is}
+\newline
+\begin{equation*}
+\begin{aligned}
+\bar{y}_{\text{str}} \pm z_{\alpha/2} SE(\bar{y}_{\text{str}})
+\end{aligned}
+\end{equation*}
+\end{itemize}
+The central limit theorem used for constructing this CI is stated in Krewski and Rao (1981). \textcolor{Purple}{Some survey software packages use the percentile of a $t$ distribution with $n-H$ degrees of freedom (df) rather than the percentile of the normal distribution.}
+\subsection{Stratified Sampling for Proportions}
+A proportion is a mean of a variable that takes on values $0$ and $1$. To make inferences about proportions, with $\bar{y}_h = \hat{P}_h$ and $s_h^2 = \frac{n_h}{n_h -1}\hat{P}_h (1-\hat{P}_h)$
+\begin{equation*}
+\begin{aligned}
+\hat{P}_{\text{str}} = \sum^H_{h=1} \frac{N_h}{N}\hat{P}_h
+\end{aligned}
+\end{equation*}
+and 
+\begin{equation*}
+\begin{aligned}
+\hat{V}(\hat{P}_{\text{str}}) = \sum^H_{h=1}(1-\frac{n_h}{N_h}) (\frac{N_h}{N})^2 \frac{\hat{P}_h (1-\hat{P}_h)}{n_h -1}
+\end{aligned}
+\end{equation*}
+Estimating the total number of population units having a specified characteristic is similar:
+\begin{equation*}
+\begin{aligned}
+\hat{t}_{\text{str}} = \sum^H_{h=1} N_h \hat{P}_h
+\end{aligned}
+\end{equation*}
+so the estimated total number of population units with the characteristic is the sum of the estimated totals in each stratum. Similarly \textcolor{Purple}{$\hat{V}(\hat{t}_{\text{str}}) = N^2 \hat{V}(\hat{P}_{\text{str}})$}
+\subsection{Sampling Weights in Stratified Random Sampling}
+\textcolor{Purple}{In stratified sampling, however we may have different inclusion probabilities in different strata so that the weights may be unequal for some stratified sampling designs.}
+\newline
+\newline
+The stratified sampling estimator $\hat{t}_{\text{str}}$ can be expressed as a weighted sum of the individual sampling units: 
+\begin{equation*}
+\begin{aligned}
+\hat{t}_{\text{str}} = \sum^H_{h=1}N_h \bar{y}_h = \sum^H_{h=1} \sum_{j \in \mathcal{S}_h} \frac{N_h}{n_h} y_{hj}
+\end{aligned}
+\end{equation*}
+The estimator of the population total in stratified sampling may thus be written as
+\begin{equation*}
+\begin{aligned}
+\hat{t}_{\text{str}} = \sum^H_{h=1}\sum_{j \in \mathcal{S}_h} w_{hj} y_{hj}
+\end{aligned}
+\end{equation*}
+where the sampling weight for unit $j$ of stratum $h$ is $w_{hj} = (N_h/n_h)$. The sampling weight can again be thought of as the number of units in the population represented by the sample member $y_{hj}$
+\newline
+\newline
+\textcolor{Purple}{Note that the probability of including unit $j$ of stratum $h$ in the sample is $\pi_{hj} = n_h/N_h$, the sampling fraction in stratum $h$.} Thus, as before, the sampling weight is simply the reciprocal of the inclusion probability:
+\begin{equation*}
+\begin{aligned}
+w_{hj} = \frac{1}{\pi_{hj}}
+\end{aligned}
+\end{equation*}
+The sum of the sampling weights in stratified random sampling equals the population size $N$ ; each sampled unit “represents” a certain number of units in the population, so the whole sample “represents” the whole population. In a stratified random sample, the population mean is thus estimated by
+\begin{equation*}
+\begin{aligned}
+\bar{y}_{\text{str}} = \frac{\sum^H_{h=1} \sum_{j \in \mathcal{S}_h}w_{hj} y_{hj}}{\sum^H_{h=1} \sum_{j \in \mathcal{S}_h}w_{hj}}
+\end{aligned}
+\end{equation*}
+\subsection{Allocating Observations to Strata}
+\subsubsection{Proportional Allocation}
+In proportional allocation, so called because the number of sampled units in each stratum is proportional to the size of the stratum, \textcolor{Purple}{the inclusion probability $\pi_{ij}=n_h/N_h$ is the same ($=n/N$) for all strata;}
+\begin{itemize}
+    \item If proportional allocation is used, each unit in the sample represents the same number of units in the population:
+    \item The probability that an individual will be selected to be in the sample, $n/N$, is the same as in an \textbf{SRS}
+    \item Proportional allocation thus results in a self-weighting sample
+    \item When the strata are large enough, the variance of $\bar{y}_{\text{str}}$ under proportional allocation is usually at most as large as the variance of the sample mean from an \textbf{SRS} with the same number of observations. 
+\end{itemize}
+\textcolor{Purple}{In a stratified sample of size $n$ with proportional allocation, since $n_h/N_h = n/N$}
+\begin{equation*}
+\begin{aligned}
+V_{\text{prop}}(\hat{t}_{\text{str}}) =& \  \sum^H_{h=1} (1-\frac{n_h}{N_h}) N_h^2 \frac{S_h^2}{n_h} \\
+=& \ (1-\frac{n}{N})\frac{N}{n} \sum^H_{h=1}N_h S_h^2 \\
+=& \ (1-\frac{n}{N})\frac{N}{N}(\text{SSW} + \sum^H_{h=1} S_h^2)
+\end{aligned}
+\end{equation*}
+The sums of squares add up, with SSTO = SSW + SSB, so the variance of the estimated population total from an \textbf{SRS} of size $n$ is
+\begin{equation*}
+\begin{aligned}
+V_{\text{SRS}}(\hat{t}) =& \ (1-\frac{n}{N})N^2 \frac{S^2}{n}\\
+=& (1-\frac{n}{N}) \frac{N^2}{n} \frac{\text{SSTO}}{N-1} \\
+=& \ (1-\frac{n}{N}) \frac{N^2}{n(N-1)}  (\text{SSW+SSB}) \\
+=& \ V_{\text{prop}} (\hat{t}_{\text{str}}) + (1-\frac{n}{N}) \frac{N}{n(N-1)} [N(\text{SSB}) - \sum^H_{h=1} (N-N_h) S_h^2]
+\end{aligned}
+\end{equation*}
+\textcolor{Purple}{$\Rightarrow$ proportional allocation with stratification always gives samller variance than \textbf{SRS} unless}
+\begin{equation*}
+\begin{aligned}
+\text{SSB} < \sum^H_{h=1} (1-\frac{N_h}{N})S_h^2
+\end{aligned}
+\end{equation*}
+This rarely happens when the Nh are large; generally, the large population sizes of the strata will force $N_h (\bar{y}_{hU} - \bar{y}_U)^2 > S_h^2$
+\begin{center}
+\begin{tabular}{ c| c| c} 
+ \hline
+Source & df & Sum of Squares\\
+Between strata & $H-1$ & SSB = $\sum^H_{h=1} \sum^{N_h}_{j=1} (\bar{y}_{hU} - \bar{y}_U)^2 = \sum^H_{h=1} N_h (\bar{y}_{hU} - \bar{y}_U)^2$ \\
+Within strata & $N-H$ & SSW = $\sum^H_{h=1} \sum^{N_h}_{j=1} (y_{hj} - \bar{y}_{hU})^2 = \sum^H_{h=1} (N_h -1) S_h^2$ \\
+total about $\bar{y}_U$ & $N-1$ & SSTO = $\sum^H_{h=1} \sum^{N_h}_{j=1} (y_{hj} - \bar{y}_U)^2 = (N-1)S^2$ \\
+ \hline
+\end{tabular}
+\end{center}
+\begin{itemize}
+    \item In general, the variance of the estimator of $t$ from a stratifies sample with proportional allocation will be samller than the variance of the estimator of $t$ from an \textbf{SRS} with the same number of observations
+    \item The more unequal the stratum means $\bar{y}_{hU}$, the more precision you will gain by using proportional allocation
+    \item The variance of $\hat{t}_{\text{str}}$ depends primarily on SSW
+    \item Since SSTO is a fixed value for the finite population, SSW is smaller when SSB is larger
+\end{itemize}
+Of course, this result only holds for population variances; it is possible for a variance estimate from proportional allocation to be larger than that from an \textbf{SRS} merely because the sample selected had large within-stratum sample variances.
+\subsubsection{Optimal Allocation}
+\textcolor{Purple}{If the variances $S_h^2$ are more or less equal across all the strata, proportional allocation is probably the best allocation for increasing precision.}
+\newline
+\newline
+Optimal allocation works well for sampling units such as corporations, cities, and hospitals, which vary greatly in size. It is also effective when some strata are much more expensive to sample than others.
+\newline
+\newline
+The objective in optimal allocation is to gain the most information for the least cost. A simple cost function is given below: Let $C$ represent total cost, $c_0$ represent overhead costs such as maintaining an office, and $c_h$ represent the cost of taking an observation in stratum $h$, so that
+\begin{equation*}
+\begin{aligned}
+C = c_0 + \sum^H_{h=1} c_h n_h
+\end{aligned}
+\end{equation*}
+We want to allocate observations to strata so as to minimize $V(\bar{y}_{\text{str}})$ for a given total cost $C$, or equivalently, to minimize $C$ for a fixed $V(\bar{y}_{\text{str}})$. \textcolor{Purple}{Suppose that the costs $c_1,c_2,\cdots, c_H$ are known.}To minimize the total cost for a fixed variance, we can prove using calculus that the optimal allocation has $n_h$ proportional to
+\begin{equation*}
+\begin{aligned}
+\frac{N_hS_h}{\sqrt{c_h}}
+\end{aligned}
+\end{equation*}
+for each $h$. Thus, the optimal sample size in stratum $h$ is
+\begin{equation*}
+\begin{aligned}
+n_h = (\frac{\frac{N_hS_h}{\sqrt{c_h}}}{\sum^H_{\ell=1}\frac{N_\ell S_\ell}{\sqrt{c_\ell}}} ) n
+\end{aligned}
+\end{equation*}
+We shall then sample heavily within a stratum if
+\begin{itemize}
+    \item The stratum accounts for a large part of the population.
+    \item The variance within the stratum is large; we sample more heavily to compensate for the heterogeneity
+    \item Sampling in the stratum is inexpensive.
+\end{itemize}
+\begin{enumerate}
+    \item If all variances and costs are equal, proportional allocation is the same as optimal allocation
+    \item If we know the variances within each stratum and they differ, optimal allocation gives a smaller variance for the estimator of $\bar{y}_U$ than proportional allocation
+    \item But optimal allocation is a more complicated scheme; often the simplicity and self-weighting property of proportional allocation are worth the extra variance. \item In addition, the optimal allocation will differ for each variable being measured, whereas the proportional allocation depends only on the number of population units in each stratum. 
+\end{enumerate}
+\subsubsection{Neyman allocation}
+Neyman allocation is a special case of optimal allocation, used when the costs in the strata (but not the variances) are approximately equal. Under Neyman allocation, $n_h$ is proportional to $N_hS_h$. If the variances $S_h^2$ are specified correctly, Neyman allocation will give an estimator with smaller variance than proportional allocation
+\newline
+\newline
+When the stratum variances $S_h^2$ are approximately known, Neyman allocation gives higher precision than proportional allocation. If the information about the stratum variances is of poor quality, however, disproportional allocation can result in a higher variance than simple random sampling. Proportional allocation, on the other hand, almost always has smaller variance than simple random sampling.
+\subsection{Determining Sample Sizes}
+The different methods of allocating observations to strata give the relative sample sizes $n_h/n$. After strata are constructed and observations allocated to strata, can be used to determine the sample size necessary to achieve a pre-specified margin of error. 
+\begin{equation*}
+\begin{aligned}
+V(\bar{y}_{\text{str}}) \le \frac{1}{n} \sum^H_{h=1} \frac{n}{n_h} (\frac{N_h}{N})^2 S_h^2 = \frac{v}{n}
+\end{aligned}
+\end{equation*}
+where $v = \sum^H_{h=1} (n/n_h)(N_h/N)^2 S_h^2$. Thus, if the fpcs can be ignored and if the normal approximation is valid, an approximate $95\%$ CI for the population mean will
+be $\bar{y}_{\text{str}} \pm z_{\alpha/2} \sqrt{v/n}$. Set $n = z_{\alpha/2}^2 v/e^2$ to achieve a desired margin error $e$. 
+
+
+
 
 
 
@@ -250,6 +542,400 @@ The only feature found in the estimators for without-replacement random samples 
 
 \end{aligned}
 \end{equation*}
+
+
+
+
+
+
+\subsection{Summary}
+To estimate the population total $t$ using a stratified random sample, let $\hat{t}_h$ estimate the population total in stratum $h$. Then
+\begin{equation*}
+\begin{aligned}
+\hat{t}_{\text{str}} = \sum^H_{h=1} \hat{t}_h = \sum^H_{h=1} \sum_{j \in \mathcal{S}_h} w_{hj} y_{hj}
+\end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+\begin{aligned}
+\hat{V} (\hat{t}_{\text{str}}) = \sum^H_{h=1} \hat{V}(\hat{t}_h) = \sum^H_{h=1} (1-\frac{n_h}{N_h}) N_h^2 \frac{s_h^2}{n_h}
+\end{aligned}
+\end{equation*}
+The population mean $\bar{y}_U = t/N$ is estimated by
+\begin{equation*}
+\begin{aligned}
+\bar{y}_{\text{str}} = \frac{\hat{t}_{\text{str}}}{N} = \sum^H_{h=1} \frac{N_h}{N}\bar{y}_h = \frac{\sum^H_{h=1} \sum_{j \in \mathcal{S}_h} w_{hj} y_{hj}}{\sum^H_{h=1} \sum_{j \in \mathcal{S}_h} w_{hj}}
+\end{aligned}
+\end{equation*}
+with $\hat{V}(\bar{y}_{\text{str}}) = \hat{V}(\hat{t}_{\text{str}})/N^2$
+\newline
+\newline
+Stratified sampling has three major design issues: 
+\begin{itemize}
+    \item Defining the strata, choosing the total sample size, and allocating the observations to the defined strata.
+    \item \textcolor{Purple}{With proportional allocation,} the same sampling fraction is used in each stratum. Proportional allocation almost always results in smaller variances for estimated means and totals than simple random sampling
+    \item \textcolor{Purple}{Disproportional allocation} may be preferred if some strata should have higher sampling fractions than others, for example, if it is desired to have larger sample sizes for strata with minority populations or for strata with large companies.
+    \item \textcolor{Purple}{Optimal allocation} specifies taking larger sampling fractions in strata that have larger variances.
+\end{itemize}
+\textcolor{Brown}{
+\subsubsection{Stratified Simple Random Sampling}
+Suppose that the survey population is divided into $H$ non-overlapping strata: $\mathcal{U}= U_1 \cup \cdots \cup \mathcal{U_H}$ with corresponding break-down of population size as $N = \sum^H_{h=1} N_h$, where $N_h$ is the size of stratum $h$. For any stratified sampling designs, there are two basic features:
+\begin{itemize}
+    \item A sample $\mathcal{S}_h$ is taken from stratum $h$ using a chosen sampling design, and this is done for every stratum.
+    \item The $H$ stratum samples $\mathcal{S}_h,h=1,2\cdots, U$ are selected independent of each other
+\end{itemize}
+\textbf{Stratified Simple Random Sampling}
+\begin{itemize}
+    \item If $\mathcal{S}_h$ is selected by \textbf{SRSWOR}
+    \item Under stratified sampling, each stratum is viewed as an independent population in terms of survey design and sample selection. Let $n_h$ be the size of the stratum sample $\mathcal{S}_h$
+    \item The overall sample size is given by $n = \sum^H_{h=1} n_h$. Let $\mathcal{S = S}_1 \cup \cdots \cup \mathcal{S_H}$ be the combined stratified sample. 
+\end{itemize}
+\subsubsection{Population Parameters}
+Let $y_{hi}$ be the value of study variable $y$ for unit $i$ in stratum $h, \ i=1,2,\cdots, N_h \ \ h=1,2,\cdots, H$. The population mean and the population total for stratum $h$ are given by:
+\begin{equation*}
+\begin{aligned}
+\mu_{yh} = \frac{1}{N_h} \sum^H_{N_h}_{i=1} y_{hi} \ \ \ \ \text{and} \ \ \ \ T_{yh} = \sum^{N_h}_{i=1} y_{hi}
+\end{aligned}
+\end{equation*}
+It follows that $T_{yh} = N_h \mu_{yh}$. Let $W_h = N_h/N$ be the stratum weight, which is the relative size of the stratum within the overall population. We have
+\begin{equation*}
+\begin{aligned}
+\sum^H_{h=1} N_h = N \ \ \ \ \text{and} \ \ \ \ \sum^H_{h=1} W_h = 1
+\end{aligned}
+\end{equation*}
+The overall \textbf{population mean} and the \textbf{population total} are given by:
+\begin{equation*}
+\begin{aligned}
+\mu_y = \frac{1}{N}\sum^H_{h=1}\sum^{N_h}_{i=1} y_{hi} \ \ \ \ \text{and} \ \ \ \ T_y = \sum^H_{h=1} \sum^{N_h}_{i=1} y_{hi}
+\end{aligned}
+\end{equation*}
+We have the following basic relations among the population parameters:
+\begin{equation*}
+\begin{aligned}
+\mu_y = \sum^H_{h=1}W_h \mu_{yh} \ \ \ \ \text{and} \ \ \ \ T_y = \sum^H_{h=1} T_{yh} = \sum^H_{h=1} N_h \mu_{yh}
+\end{aligned}
+\end{equation*}
+\textbf{The stratum population variances are given by}
+\begin{equation*}
+\begin{aligned}
+\sigma_{yh}^2 = \frac{1}{N_h -1} \sum^{N_h}_{i=1} (y_{hi} - \mu_{yh})^2 \ \ \ \ h=1,2\cdots, H
+\end{aligned}
+\end{equation*}
+\textbf{The overall population variance is given by}
+\begin{equation*}
+\begin{aligned}
+\sigma_y^2 = \frac{1}{N-1} \sum^H_{h=1} \sum^{N_h}_{i=1}(y_{hi} - \mu_y)^2
+\end{aligned}
+\end{equation*}
+Treating $(N_h -1)/(N-1) \doteq W_h$ and $N_h/(N-1) =\doteq W_h$. We have the following decomposition of the overall \textbf{population variance}:
+\begin{equation*}
+\begin{aligned}
+\sigma_y^2 \doteq \sum^H_{h=1} W_h \sigma_{yh}^2 + \sum^H_{h=1}W_h (\mu_{yh} - \mu_y)^2
+\end{aligned}
+\end{equation*}
+\begin{itemize}
+    \item The total population variantion $\sigma_y^2$
+    \item Within Strata Variation $\sum^H_{h=1} W_h \sigma_{yh}^2$
+    \item Between Strata Variation $\sum^H_{h=1} W_h(\mu_{yh} - \mu_y)^2$
+    \item The result will play a crucial role in assessing the efficiency of stratifies simple random sampling
+\end{itemize}
+\textbf{Under stratifies simple random sampling}
+\begin{itemize}
+    \item The stratified sample mean $\bar{y}_{st}$ is an unbiased estimator for the population mean $\mu_y$
+\newline
+\begin{equation*}
+\begin{aligned}
+E(\bar{y}_{st}) = \mu_y
+\end{aligned}
+\end{equation*}
+    \item The \textbf{design-based variance} of $\bar{y}_{st}$ is given by
+\newline
+\begin{equation*}
+\begin{aligned}
+V(\bar{y}_{st}) = \sum^H_{h=1} W_h^2 (1-\frac{n_h}{N_h}) \frac{\sigma^2_{yh}}{n_h}
+\end{aligned}
+\end{equation*}
+    \item An \textbf{unbiased variance estimator} for $\bar{y}_{st}$ is given by
+\newline
+\begin{equation*}
+\begin{aligned}
+v(\hat{y}_{st}) = \sum^H_{h=1} W_h^2 (1-\frac{n_h}{N_h}) \frac{s_{yh}^2}{n_h}
+\end{aligned}
+\end{equation*}
+which satisfies $E\{ v(\bar{y}_{st}) \} = V(\bar{y}_{st})$
+\end{itemize}
+\subsubsection{Neyman Allocation}
+When the overall sample size $n$ is fixed, an optimal allocation $(n_1,n_2,\cdotsn_H)$ can be found by minimizing $V(\bar{y}_{st})$ subject to the constraint $\sum^H_{h=1} n_h = n$. The resulting sample size allocation method is called the Neyman allocation
+\newline
+\newline
+Under stratifies simple random sampling, the Neyman allocation, which minimizes $V(\bar{y}_{st})$ subject to $\sum^H_{h=1} n_h =n$, is given by
+\begin{equation*}
+\begin{aligned}
+n_h = h \frac{W_h \sigma_{yh}}{\sum^H_{k=1} W_k \sigma_{yk}} = n \frac{N_h \sigma_{yh}}{\sum^H_{k=1} N_k \sigma_{yk}} \ \ \ \ h=1,2,\cdots, H
+\end{aligned}
+\end{equation*}
+and the corresponding minimized variance is given by
+\begin{equation*}
+\begin{aligned}
+V_{\text{neym}}(\bar{y}_{\text{st}} ) = \frac{1}{n} (\sum^H_{h=1} W_h \sigma_{yh} )^2 - \frac{1}{N} \sum^H_{h=1} W_h \sigma^2_{yh}
+\end{aligned}
+\end{equation*}
+where the subscript 'neym' indicates 'Neyman allocation'.
+\newline
+\newline
+Neyman allocation requires information on stratum population variances $\sigma_{yh}^2$ and may not be practically useful.
+\begin{itemize}
+    \item Under Neyman allocation, population strata with bigger size $N_h$ or bigger variation (i.e., bigger $\sigma^2_{yh}$ ) or both should be assigned a bigger sample size $n_h$.
+    \item If all strata have similar variation, i.e., similar values of $\sigma_{yh}^2$, Neyman allocation
+    reduces to $n_h \propto W_h$, which is proportional allocation.
+\end{itemize}
+\subsubsection{Optimal Allocation with Pre-specified Cost or Variance}
+If the cost for surveying a unit is different for different strata, a more complicated optimal allocation method could be developed to take into account the issue with differential costs. We consider the situation where there is a fixed “indirect” cost $c_0$ for surveying, and also a per unit cost, which in stratum $h$ is $c_h$, the same for all units in the stratum. The cost per unit may vary from stratum to stratum. There are two versions of optimal sample size allocation for the current situation:
+\begin{itemize}
+    \item The first is to allocate the stratum sample sizes $(n_1,n_2,\cdots,n_H)$ to minimize the variance $V(\bar{y}_{st})$ with a pre-specified total cost $C_0$
+    \item The second is to allocate the sample sizes $(n_1,n_2,\cdots, n_H)$ to minimize the total cost $c_0 + \sum^H_{h=1} c_hn_h$ while controlling the variance $V(\bar{y}_{st})$ at a pre-specified value $V_0$
+\end{itemize}
+The constraint on the total cost is given by
+\begin{equation*}
+\begin{aligned}
+C_1 = \sum^H_{h=1} c_h n_h
+\end{aligned}
+\end{equation*}
+where $C_1= C_0 -c_0$ is the total direct cost for selecting the sample. The variance formula $V(\bar{y}_{st})$ can be re-written as:
+\begin{equation*}
+\begin{aligned}
+V(\bar{y}_{st}) = \sum^H_{h=1} W_h^2 \frac{\sigma^2_{yh}}{n_h} - \sum^H_{h=1} W_h^2 \frac{\sigma_{yh}^2}{N_h}
+\end{aligned}
+\end{equation*}
+Since the second term on the right hand side of the equation does not involve $n_h$, the variance constraint $V_0 = V(\bar{y}_{st})$ with respect to $(n_1,n_2,\cdots,n_H)$ can be written as
+\begin{equation*}
+\begin{aligned}
+V_1 = \sum^H_{h=1} W_h^2 \frac{\sigma_{yh}^2}{n_h}
+\end{aligned}
+\end{equation*}
+where $V_1 = V_0 - \sum^H_{h=1} W_h^2 \sigma_{yh}^2/N_h$. By the Cauchy-Schwarz inequality $(\sum^n_{i=1} a_i^2)(\sum^n_{i=1}b_i^2) \ge (\sum^n_{i=1}a_ib_i)^2$, where the equality holds if $a_i \propto b_i$, we have
+\begin{equation*}
+\begin{aligned}
+V_1C_1 = (\sum^H_{h=1} W_h^2 \frac{\sigma_{yh}^2}{n_h})(\sum^H_{h=1}c_hn_h) \ge (\sum^H_{h=1}W_h \sigma_{yh} \sqrt{c_h})^2
+\end{aligned}
+\end{equation*}
+where the equality holds if $W_h \sigma_{yh} /\sqrt{n_h} \propto \sqrt{c_hn_h}$}
+\section{Cluster Sampling with Equal Probabilities}
+In simple random sampling, the units sampled are also the elements observed. In cluster sampling, the sampling units are the clusters (psus) and the elements observed are the ssus within the clusters. The universe $\mathcal{U}$ is the population of $N$ psus; $\mathcal{S}$ designates the sample of psus chosen from the population of psus, and $\mathcal{S}_i$ is the sample of ssus chosen from the $i$th psu. The measured quantities are
+\begin{equation*}
+\begin{aligned}
+y_{ij} = \text{measurement for} j^{\text{th}} \text{element in} \  i^{\text{th}} \text{psu}
+\end{aligned}
+\end{equation*}
+but in cluster sampling, it is easiest to think at the psu level in terms of cluster totals. No matter how you define it, the notation for cluster sampling is messy because you need notation for both the \textbf{psu} and the \textbf{ssu} levels.
+\subsection{psu Level-Population Quantitites}
+\begin{equation*}
+\begin{aligned}
+N =& \ \text{number of psus in the population} \\
+M_i =& \ \text{number of ssu in psu} \ i \\
+M_0 =& \ \sum^N_{i=1} M_i = \text{total number of ssus in the population} \\
+t_i =& \ \sum^{M_i}_{j=1} y_{ij} = \text{total in psu} \ i \\
+t=& \ \sum^N_{i=1} t_i = \sum^N_{i=1} \sum^{M_i}_{j=1} y_{ij} = \text{population total} \\
+S_t^2 =& \frac{1}{N-1}\sum^N_{i=1} (t_i - \frac{t}{N})^2 = \text{population variance of the psu totals}
+\end{aligned}
+\end{equation*}
+\subsection{ssu Level-Population Quantities}
+\begin{equation*}
+\begin{aligned}
+\bar{y}_U =& \ \sum^N_{i=1} \sum^{M_i}_{j=1} \frac{y_{ij}}{M_0} = \text{population mean} \\
+\bar{y}_{iU} =& \ \sum^{M_i}_{j=1} \frac{y_{ij}}{M_i} = \frac{t_i}{M_i} = \text{population mean in psu} \ i \\
+\mathcal{S}^2 =& \ \sum^N_{i=1} \sum^{M_i}_{j=1} \frac{(y_{ij} - \bar{y}_U)^2}{M_0 -1} = \text{population variance (per ssu)} \\
+\mathcal{S}_i^2 =& \ \sum^{M_i}_{j=1} \frac{(y_{ij} - \bar{y}_{iU})^2}{M_i -1} = \text{population variance within psu} \ i
+\end{aligned}
+\end{equation*}
+\subsection{Sample Quantities}
+\begin{equation*}
+\begin{aligned}
+n =& \text{number of psus in the sample} \\
+m_i =& \ \text{number of ssus in the sample from psu} \ i \\
+\bar{y}_i =& \  \sum_{j \in \mathcal{S}_i} \frac{y_{ij}}{m_i} = \text{sample mean (per ssu) for psu} \ i \\
+\hat{t}_i =& \ \sum_{j \in \mathcal{S}_i} \frac{M_i}{m_i} y_{ij} = \text{estimated total for psu} \ i \\
+\hat{t}_{\text{unb}} =& \sum_{i \in \mathcal{S}} \frac{N}{n} \hat{t}_i = \text{unbiased estimator of population total} \\
+s_t^2 =& \ \frac{1}{n-1} \sum_{i \in \mathcal{S}}(\hat{t}_i - \frac{\hat{t}_{\text{unb}}}{N})^2 \\
+s_i^2 =& \ \sum_{j \in \mathcal{S}_i} \frac{(y_{ij}-\bar{y}_i)^2}{m_i -1} = \text{sample variance within psu} \ i \\
+w_{ij} =& \ \text{sampling weight for ssu} \ j \ \text{in psu} \ i
+\end{aligned}
+\end{equation*}
+\subsection{One-Stage Cluster Sampling}
+\textcolor{Purple}{In the population of $N$ \textbf{psus}, the $i^{\text{th}}$ \textbf{psu} contains $M_i$ \textbf{ssus} (elements). In the simplest design, we take an \textbf{SRS} of $n$ \textbf{psus} from the population and measure our variable of interest on every element in the sampled \textbf{psus}. Thus, for one-stage cluster sampling, $M_i=m_i$.}
+\subsubsection{Clusters of Equal Sizes: Estimation}
+Let’s consider the simplest case in which each \textbf{psu} has the same number of elements, with $M_i = m_i = M$
+\begin{itemize}
+    \item We have an \textbf{SRS} of $n$ data points $\{t_i, i \in \mathcal{S} \}$
+    \item $t_i$ is the total for all the elements in psu $i$
+    \item $\bar{t}_{\mathcal{S}} = \sum_{i \in \mathcal{S}} t_i/n$ estimates the average of the cluster totals
+\end{itemize}
+The total income $t:$
+\begin{equation*}
+\begin{aligned}
+\hat{t} = \frac{N}{n} \sum_{i \in \mathcal{S}}t_i
+\end{aligned}
+\end{equation*}
+Because we have an \textbf{SRS} of $n$ units from a population of $N$ units. As a result, $\hat{t}$ is an unbiased estimator of $t$, with the variance
+\begin{equation*}
+\begin{aligned}
+V(\hat{t}) = N^2(1-\frac{n}{N}) \frac{S_t^2}{n}
+\end{aligned}
+\end{equation*}
+The standard error:
+\begin{equation*}
+\begin{aligned}
+SE(\hat{t}) = N\sqrt{(1-\frac{n}{N}) \frac{s_t^2}{n}}
+\end{aligned}
+\end{equation*}
+where $S_t^2$ and $s_t^2$ are the population and sample variance, respectively, of the psu totals:
+\begin{equation*}
+\begin{aligned}
+S_t^2 = \frac{1}{N-1} \sum^N_{i=1} (t_i - \frac{t}{N})^2
+\end{aligned}
+\end{equation*}
+and 
+\begin{equation*}
+\begin{aligned}
+s_t^2 = \frac{1}{n-1} \sum_{i \in \mathcal{S}} (t_i -\frac{\hat{t}}{N})^2
+\end{aligned}
+\end{equation*}
+To estimate $\bar{y}_U$, divide the estimated total by the number of persons, obtaining
+\begin{equation*}
+\begin{aligned}
+\hat{\bar{y}} = \frac{\hat{t}}{NM}
+\end{aligned}
+\end{equation*}
+with
+\begin{equation*}
+\begin{aligned}
+V(\hat{\bar{y}}) = (1-\frac{n}{N}) \frac{S_t^2}{nM^2}
+\end{aligned}
+\end{equation*}
+and
+\begin{equation*}
+\begin{aligned}
+SE(\hat{\bar{y}})= \frac{1}{M}\sqrt{(1-\frac{n}{N}) \frac{s_t^2}{n}}
+\end{aligned}
+\end{equation*}
+No new ideas are introduced to carry out one-stage cluster sampling; we simply use the results for simple random sampling with the \textbf{psu} totals as the observations
+
+
+
+
+
+
+\begin{equation*}
+\begin{aligned}
+
+\end{aligned}
+\end{equation*}
+
+
+
+
+
+\section{Key Terms}
+\textbf{Cluster sample:} A probability sample in which each population unit belongs to a group, or cluster, and the clusters are sampled according to the sampling design.
+\newline
+\newline
+\textbf{Coefficient of variation (CV):} The CV of a statistic $\hat{\theta}$, where with $E(\hat{\theta}) \ne 0$, is $CV(\hat{\theta}) = \sqrt{V(\hat{\theta})}/E(\hat{\theta})$
+\newline
+\newline
+\textbf{Confidence interval (CI):} An interval estimate for a population quantity, for which the probability that the random interval contains the true value of the population quantity is known.
+\newline
+\newline
+\textbf{Design-based inference:} Inference for finite population characteristics based on the survey design, also called randomization inference.
+\newline
+\newline
+\textbf{Finite population correction (fpc):} A correction factor which, when multipled by the with-replacement variance, gives the without-replacement variance. For an \textbf{SRS} of size n from a population of size $N$, the fpc is $1-n/N$.
+\newline
+\newline
+\textbf{Inclusion probability:} $\pi_i=$ probability that unit i is included in the sample. 
+\newline
+\newline
+\textbf{Margin of error:} Half of the width of a $95\%$ CI.
+\newline
+\newline
+\textbf{Model-based inference:} Inference for finite population characteristics based on a model for the population, also called prediction inference.
+\newline
+\newline
+\textbf{Probability sampling:} Method of sampling in which every subset of the population has a known probability of being included in the sample.
+\newline
+\newline
+\textbf{Sampling distribution:} The probability distribution of a statistic generated by the sampling design.
+\newline
+\newline
+\textbf{Sampling weight:} Reciprocal of the inclusion probability; $w_i = 1/\pi_i$ . 
+\newline
+\newline
+\textbf{Self-weighting sample:} A sample in which all probabilities of inclusion $\pi_i$ are equal, so that all sampling weights $w_i$ are the same.
+\newline
+\newline
+\textbf{Simple random sample with replacement (SRSWR):} A probability sample in which the first unit is selected from the population with probability $1/N$; then the unit is replaced and the second unit is selected from the set of $N$ units with probability $1/N$, and so on until n units are selected.
+\newline
+\newline
+\textbf{Simple random sample without replacement (SRS):} An \textbf{SRS} of size $n$ is a probability sample in which any possible subset of n units from the population has the same probability $(= n!(N-n)!/N !)$ of being the sample selected.
+\newline
+\newline
+\textbf{Standard error (SE):} The square root of the estimated variance of a statistic. 
+\newline
+\newline
+\textbf{Stratified sample:} A probability sample in which population units are partitioned into strata, and then a probability sample of units is taken from each stratum.
+\newline
+\newline
+\textbf{Systematic sample:} A probability sample in which every $k$ th unit in the population is selected to be in the sample, starting with a randomly chosen value $R$. Systematic sampling is a special case of cluster sampling.
+\newline
+\newline
+\textbf{Disproportional allocation:} Allocation of sampling units to strata so that the sampling fractions $n_h/N_h$ are unequal.
+\newline
+\newline
+\textbf{Optimal allocation:} Allocation of sampling units to strata so that the variance of the estimator is minimized for a given total cost.
+\newline
+\newline
+\textbf{Proportional allocation:} Allocation of sampling units to strata so that $n_h/N_h =n/N$ for each stratum. Proportional allocation results in a self-weighting sample.
+\newline
+\newline
+\textbf{Quota sampling:} A non-probability sampling method which many persons confuse with stratified sampling. In quota sampling, quota classes are formed that serve the role of strata, but the survey taker uses a non-probability sampling method such as convenience sampling to reach the desired sample size in each quota class.
+\newline
+\newline
+\textbf{Stratified random sampling:} Probability sampling method in which population units are partitioned into strata, and then an \textbf{SRS} is taken from each stratum.
+\newline
+\newline
+\textbf{Stratum:} One of the sub-populations or classes that make up the entire population. Every unit in the population is in exactly one stratum.
+\newline
+\newline
+\textbf{Cluster:} See Primary sampling unit.
+\newline
+\newline
+\textbf{Cluster sampling:} A probability sampling design in which observations are grouped into clusters (psu). A probability sample of psus is selected from the population of psus.
+\newline
+\newline
+\textbf{Intra-class correlation coefficient (ICC):} The Pearson correlation coefficient of all pairs of units within the same cluster.
+\newline
+\newline
+\textbf{One-stage cluster sampling:} A cluster sampling design in which all ssus in selected psus are observed.
+\newline
+\newline
+\textbf{Primary sampling unit (psu):} The unit that is sampled from the population. 
+\newline
+\newline
+\textbf{Secondary sampling unit (ssu):} A sub-unit that is sub-sampled from the selected psus.
+\newline
+\newline
+\textbf{Two-stage cluster sampling:} A cluster sampling design in which the ssus in selected psus are subsampled.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
